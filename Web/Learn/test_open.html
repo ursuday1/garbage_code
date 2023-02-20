@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Get Address from Coordinates</title>
+    <script>
+      function getAddress() {
+        var lat = document.getElementById("latitude").value;
+        var lng = document.getElementById("longitude").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://nominatim.openstreetmap.org/reverse?format=json&lat=" + lat + "&lon=" + lng, true);
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            var data = JSON.parse(xhr.responseText);
+            document.getElementById("address").innerHTML = data.display_name;
+          }
+        };
+        xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+    <label>Latitude:</label>
+    <input type="text" id="latitude" value="47.608013">
+    <br>
+    <label>Longitude:</label>
+    <input type="text" id="longitude" value="-122.335167">
+    <br><br>
+    <button onclick="getAddress()">Get Address</button>
+    <br><br>
+    <div id="address"></div>
+  </body>
+</html>

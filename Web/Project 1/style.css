@@ -1,0 +1,50 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-top: 10rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #4e674f;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+button:hover {
+    background-color: #4e674f;
+}
+
+#countdown {
+    font-size: 2rem;
+    margin: 0;
+}
